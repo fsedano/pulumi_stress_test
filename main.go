@@ -15,25 +15,40 @@ func main() {
 	pulumi.Run(run)
 }
 
-func run(ctx *pulumi.Context) error {
-	pod, err := createPod(ctx, 10)
-	if err != nil {
-		log.Printf("An error!!")
-		ctx.Log.Error("an error happened", nil)
-	}
-	for i := 0; i < 50; i++ {
+type WaveDef map[int][]pulumi.Resource
 
-		createDeployment(ctx, i, pod)
+func run(ctx *pulumi.Context) error {
+	// pod, err := createPod(ctx, 10)
+	// if err != nil {
+	// 	log.Printf("An error!!")
+	// 	ctx.Log.Error("an error happened", nil)
+	// }
+	waveList := make(WaveDef)
+	for wave := 0; wave < 7; wave++ {
+		waveList[wave] = []pulumi.Resource{}
+
+		for i := 0; i < 10; i++ {
+			depends := []pulumi.Resource{}
+			if wave > 0 {
+				depends = waveList[wave-1]
+			}
+			//log.Printf("Depends is %#v for wave=%d", depends, wave)
+			deplName := fmt.Sprintf("wave%di%d", wave, i)
+			res, err := createDeployment(ctx, deplName, depends)
+			if err == nil {
+				waveList[wave] = append(waveList[wave], res)
+			}
+		}
 
 	}
 
 	return nil
 }
 
-func createDeployment(ctx *pulumi.Context, n int, pod *corev1.Pod) error {
-	name := fmt.Sprintf("n1%d", n)
+func createDeployment(ctx *pulumi.Context, name string, depends []pulumi.Resource) (*appsv1.Deployment, error) {
+	log.Printf("Creating %s that depends on %#v", name, depends)
 	labels := pulumi.StringMap{"app": pulumi.String(name)}
-	_, err := appsv1.NewDeployment(ctx, name, &appsv1.DeploymentArgs{
+	deployment, err := appsv1.NewDeployment(ctx, name, &appsv1.DeploymentArgs{
 		Metadata: &v1.ObjectMetaArgs{
 			Labels:    labels,
 			Name:      pulumi.String(name),
@@ -60,27 +75,27 @@ func createDeployment(ctx *pulumi.Context, n int, pod *corev1.Pod) error {
 				},
 			},
 		},
-	}, pulumi.DependsOn([]pulumi.Resource{pod}))
-	return err
+	}, pulumi.DependsOn(depends))
+	return deployment, err
 }
 
-func createPod(ctx *pulumi.Context, i int) (*corev1.Pod, error) {
-	pod, err := corev1.NewPod(ctx, fmt.Sprintf("pod%d", i), &corev1.PodArgs{
-		Metadata: &v1.ObjectMetaArgs{
-			Namespace: pulumi.String("pul"),
-		},
-		Spec: corev1.PodSpecArgs{
-			Containers: corev1.ContainerArray{
-				corev1.ContainerArgs{
-					Name:  pulumi.String("nginx"),
-					Image: pulumi.String("nginx2"),
-				},
-			},
-		},
-	})
-	if err != nil {
-		return nil, err
-	}
-	return pod, err
+// func createPod(ctx *pulumi.Context, i int) (*corev1.Pod, error) {
+// 	pod, err := corev1.NewPod(ctx, fmt.Sprintf("pod%d", i), &corev1.PodArgs{
+// 		Metadata: &v1.ObjectMetaArgs{
+// 			Namespace: pulumi.String("pul"),
+// 		},
+// 		Spec: corev1.PodSpecArgs{
+// 			Containers: corev1.ContainerArray{
+// 				corev1.ContainerArgs{
+// 					Name:  pulumi.String("nginx"),
+// 					Image: pulumi.String("nginx2"),
+// 				},
+// 			},
+// 		},
+// 	})
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	return pod, err
 
-}
+// }
