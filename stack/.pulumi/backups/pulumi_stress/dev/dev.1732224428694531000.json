@@ -1,0 +1,364 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/pulumi_stress/dev",
+        "latest": {
+            "manifest": {
+                "time": "2024-11-21T22:27:08.692067+01:00",
+                "magic": "02b3a134bb70d23935c3c31b7124749636668925e1a74bb685b46037e077887d",
+                "version": "v3.134.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:iNegY18XLlg=:v1:TkdHppxM066WXzig:+p9US/ivq5mCOEApTXopE2InDh2ZDg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::pulumi_stress::pulumi:pulumi:Stack::pulumi_stress-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2024-11-21T21:21:12.378576Z",
+                    "modified": "2024-11-21T21:21:12.378576Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::pulumi_stress::pulumi:providers:kubernetes::default_3_30_2",
+                    "custom": true,
+                    "id": "dfaeae07-b005-4ca8-a7f8-e2f6c2b8d4ae",
+                    "type": "pulumi:providers:kubernetes",
+                    "inputs": {
+                        "__internal": {},
+                        "version": "3.30.2"
+                    },
+                    "outputs": {
+                        "version": "3.30.2"
+                    },
+                    "created": "2024-11-21T21:21:13.455367Z",
+                    "modified": "2024-11-21T21:21:13.455367Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::pulumi_stress::kubernetes:core/v1:Pod::pod",
+                    "custom": true,
+                    "id": "pul/pod-d96b7af1",
+                    "type": "kubernetes:core/v1:Pod",
+                    "inputs": {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "pulumi.com/autonamed": "true"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/managed-by": "pulumi"
+                            },
+                            "name": "pod-d96b7af1",
+                            "namespace": "pul"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "image": "nginx",
+                                    "name": "nginx"
+                                }
+                            ]
+                        }
+                    },
+                    "outputs": {
+                        "__fieldManager": "pulumi-kubernetes",
+                        "__initialApiVersion": "v1",
+                        "__inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Pod",
+                            "metadata": {
+                                "annotations": {
+                                    "pulumi.com/autonamed": "true"
+                                },
+                                "labels": {
+                                    "app.kubernetes.io/managed-by": "pulumi"
+                                },
+                                "name": "pod-d96b7af1",
+                                "namespace": "pul"
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "image": "nginx",
+                                        "name": "nginx"
+                                    }
+                                ]
+                            }
+                        },
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{\"pulumi.com/autonamed\":\"true\"},\"labels\":{\"app.kubernetes.io/managed-by\":\"pulumi\"},\"name\":\"pod-d96b7af1\",\"namespace\":\"pul\"},\"spec\":{\"containers\":[{\"image\":\"nginx\",\"name\":\"nginx\"}]}}\n",
+                                "pulumi.com/autonamed": "true"
+                            },
+                            "creationTimestamp": "2024-11-21T21:25:26Z",
+                            "labels": {
+                                "app.kubernetes.io/managed-by": "pulumi"
+                            },
+                            "managedFields": [
+                                {
+                                    "apiVersion": "v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:metadata": {
+                                            "f:annotations": {
+                                                ".": {},
+                                                "f:kubectl.kubernetes.io/last-applied-configuration": {},
+                                                "f:pulumi.com/autonamed": {}
+                                            },
+                                            "f:labels": {
+                                                ".": {},
+                                                "f:app.kubernetes.io/managed-by": {}
+                                            }
+                                        },
+                                        "f:spec": {
+                                            "f:containers": {
+                                                "k:{\"name\":\"nginx\"}": {
+                                                    ".": {},
+                                                    "f:image": {},
+                                                    "f:imagePullPolicy": {},
+                                                    "f:name": {},
+                                                    "f:resources": {},
+                                                    "f:terminationMessagePath": {},
+                                                    "f:terminationMessagePolicy": {}
+                                                }
+                                            },
+                                            "f:dnsPolicy": {},
+                                            "f:enableServiceLinks": {},
+                                            "f:restartPolicy": {},
+                                            "f:schedulerName": {},
+                                            "f:securityContext": {},
+                                            "f:terminationGracePeriodSeconds": {}
+                                        }
+                                    },
+                                    "manager": "pulumi-kubernetes",
+                                    "operation": "Update",
+                                    "time": "2024-11-21T21:25:26Z"
+                                },
+                                {
+                                    "apiVersion": "v1",
+                                    "fieldsType": "FieldsV1",
+                                    "fieldsV1": {
+                                        "f:status": {
+                                            "f:conditions": {
+                                                "k:{\"type\":\"ContainersReady\"}": {
+                                                    ".": {},
+                                                    "f:lastProbeTime": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                },
+                                                "k:{\"type\":\"Initialized\"}": {
+                                                    ".": {},
+                                                    "f:lastProbeTime": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                },
+                                                "k:{\"type\":\"PodReadyToStartContainers\"}": {
+                                                    ".": {},
+                                                    "f:lastProbeTime": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                },
+                                                "k:{\"type\":\"Ready\"}": {
+                                                    ".": {},
+                                                    "f:lastProbeTime": {},
+                                                    "f:lastTransitionTime": {},
+                                                    "f:status": {},
+                                                    "f:type": {}
+                                                }
+                                            },
+                                            "f:containerStatuses": {},
+                                            "f:hostIP": {},
+                                            "f:hostIPs": {},
+                                            "f:phase": {},
+                                            "f:podIP": {},
+                                            "f:podIPs": {
+                                                ".": {},
+                                                "k:{\"ip\":\"10.42.0.59\"}": {
+                                                    ".": {},
+                                                    "f:ip": {}
+                                                }
+                                            },
+                                            "f:startTime": {}
+                                        }
+                                    },
+                                    "manager": "k3s",
+                                    "operation": "Update",
+                                    "subresource": "status",
+                                    "time": "2024-11-21T21:25:28Z"
+                                }
+                            ],
+                            "name": "pod-d96b7af1",
+                            "namespace": "pul",
+                            "resourceVersion": "660753",
+                            "uid": "5afaccd1-2b28-4368-9d74-68f6bea9b0cc"
+                        },
+                        "spec": {
+                            "containers": [
+                                {
+                                    "image": "nginx",
+                                    "imagePullPolicy": "Always",
+                                    "name": "nginx",
+                                    "resources": {},
+                                    "terminationMessagePath": "/dev/termination-log",
+                                    "terminationMessagePolicy": "File",
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access-ffmdz",
+                                            "readOnly": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "dnsPolicy": "ClusterFirst",
+                            "enableServiceLinks": true,
+                            "nodeName": "k3d-k3s-default-server-0",
+                            "preemptionPolicy": "PreemptLowerPriority",
+                            "priority": 0,
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "securityContext": {},
+                            "serviceAccount": "default",
+                            "serviceAccountName": "default",
+                            "terminationGracePeriodSeconds": 30,
+                            "tolerations": [
+                                {
+                                    "effect": "NoExecute",
+                                    "key": "node.kubernetes.io/not-ready",
+                                    "operator": "Exists",
+                                    "tolerationSeconds": 300
+                                },
+                                {
+                                    "effect": "NoExecute",
+                                    "key": "node.kubernetes.io/unreachable",
+                                    "operator": "Exists",
+                                    "tolerationSeconds": 300
+                                }
+                            ],
+                            "volumes": [
+                                {
+                                    "name": "kube-api-access-ffmdz",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "expirationSeconds": 3607,
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "status": {
+                            "conditions": [
+                                {
+                                    "lastTransitionTime": "2024-11-21T21:25:28Z",
+                                    "status": "True",
+                                    "type": "PodReadyToStartContainers"
+                                },
+                                {
+                                    "lastTransitionTime": "2024-11-21T21:25:26Z",
+                                    "status": "True",
+                                    "type": "Initialized"
+                                },
+                                {
+                                    "lastTransitionTime": "2024-11-21T21:25:28Z",
+                                    "status": "True",
+                                    "type": "Ready"
+                                },
+                                {
+                                    "lastTransitionTime": "2024-11-21T21:25:28Z",
+                                    "status": "True",
+                                    "type": "ContainersReady"
+                                },
+                                {
+                                    "lastTransitionTime": "2024-11-21T21:25:26Z",
+                                    "status": "True",
+                                    "type": "PodScheduled"
+                                }
+                            ],
+                            "containerStatuses": [
+                                {
+                                    "containerID": "containerd://e2c3b038635bed75a503f430a1409e5155fa790a0eb86d246c9a312e5e490f21",
+                                    "image": "docker.io/library/nginx:latest",
+                                    "imageID": "docker.io/library/nginx@sha256:bc5eac5eafc581aeda3008b4b1f07ebba230de2f27d47767129a6a905c84f470",
+                                    "lastState": {},
+                                    "name": "nginx",
+                                    "ready": true,
+                                    "restartCount": 0,
+                                    "started": true,
+                                    "state": {
+                                        "running": {
+                                            "startedAt": "2024-11-21T21:25:28Z"
+                                        }
+                                    }
+                                }
+                            ],
+                            "hostIP": "192.168.97.2",
+                            "hostIPs": [
+                                {
+                                    "ip": "192.168.97.2"
+                                }
+                            ],
+                            "phase": "Running",
+                            "podIP": "10.42.0.59",
+                            "podIPs": [
+                                {
+                                    "ip": "10.42.0.59"
+                                }
+                            ],
+                            "qosClass": "BestEffort",
+                            "startTime": "2024-11-21T21:25:26Z"
+                        }
+                    },
+                    "parent": "urn:pulumi:dev::pulumi_stress::pulumi:pulumi:Stack::pulumi_stress-dev",
+                    "provider": "urn:pulumi:dev::pulumi_stress::pulumi:providers:kubernetes::default_3_30_2::dfaeae07-b005-4ca8-a7f8-e2f6c2b8d4ae",
+                    "propertyDependencies": {
+                        "apiVersion": [],
+                        "kind": [],
+                        "metadata": [],
+                        "spec": []
+                    },
+                    "created": "2024-11-21T21:25:28.574718Z",
+                    "modified": "2024-11-21T21:25:28.574718Z"
+                }
+            ]
+        }
+    }
+}

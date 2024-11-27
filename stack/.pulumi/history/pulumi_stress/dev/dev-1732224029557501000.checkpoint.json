@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/pulumi_stress/dev",
+        "latest": {
+            "manifest": {
+                "time": "2024-11-21T22:20:29.555616+01:00",
+                "magic": "02b3a134bb70d23935c3c31b7124749636668925e1a74bb685b46037e077887d",
+                "version": "v3.134.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:iNegY18XLlg=:v1:TkdHppxM066WXzig:+p9US/ivq5mCOEApTXopE2InDh2ZDg=="
+                }
+            }
+        }
+    }
+}

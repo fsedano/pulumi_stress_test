@@ -1,0 +1,83 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "organization/pulumi_stress/dev",
+        "latest": {
+            "manifest": {
+                "time": "2024-11-21T23:09:17.118911+01:00",
+                "magic": "02b3a134bb70d23935c3c31b7124749636668925e1a74bb685b46037e077887d",
+                "version": "v3.134.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:iNegY18XLlg=:v1:TkdHppxM066WXzig:+p9US/ivq5mCOEApTXopE2InDh2ZDg=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:dev::pulumi_stress::pulumi:pulumi:Stack::pulumi_stress-dev",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack",
+                    "created": "2024-11-21T22:09:16.969103Z",
+                    "modified": "2024-11-21T22:09:16.969103Z"
+                },
+                {
+                    "urn": "urn:pulumi:dev::pulumi_stress::pulumi:providers:kubernetes::default_3_30_2",
+                    "custom": true,
+                    "id": "73705879-2baf-44bc-b2b2-eb8a85a7238a",
+                    "type": "pulumi:providers:kubernetes",
+                    "inputs": {
+                        "__internal": {},
+                        "version": "3.30.2"
+                    },
+                    "outputs": {
+                        "version": "3.30.2"
+                    },
+                    "created": "2024-11-21T22:09:17.009969Z",
+                    "modified": "2024-11-21T22:09:17.009969Z"
+                }
+            ],
+            "pending_operations": [
+                {
+                    "resource": {
+                        "urn": "urn:pulumi:dev::pulumi_stress::kubernetes:core/v1:Pod::pod10",
+                        "custom": true,
+                        "type": "kubernetes:core/v1:Pod",
+                        "inputs": {
+                            "apiVersion": "v1",
+                            "kind": "Pod",
+                            "metadata": {
+                                "annotations": {
+                                    "pulumi.com/autonamed": "true"
+                                },
+                                "labels": {
+                                    "app.kubernetes.io/managed-by": "pulumi"
+                                },
+                                "name": "pod10-8aab6632",
+                                "namespace": "pul"
+                            },
+                            "spec": {
+                                "containers": [
+                                    {
+                                        "image": "nginx2",
+                                        "name": "nginx"
+                                    }
+                                ]
+                            }
+                        },
+                        "parent": "urn:pulumi:dev::pulumi_stress::pulumi:pulumi:Stack::pulumi_stress-dev",
+                        "provider": "urn:pulumi:dev::pulumi_stress::pulumi:providers:kubernetes::default_3_30_2::73705879-2baf-44bc-b2b2-eb8a85a7238a",
+                        "propertyDependencies": {
+                            "apiVersion": [],
+                            "kind": [],
+                            "metadata": [],
+                            "spec": []
+                        }
+                    },
+                    "type": "creating"
+                }
+            ]
+        }
+    }
+}

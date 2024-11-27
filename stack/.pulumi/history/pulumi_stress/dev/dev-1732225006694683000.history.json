@@ -1,0 +1,26 @@
+{
+    "kind": "update",
+    "startTime": 1732225003,
+    "message": "",
+    "environment": {
+        "exec.kind": "cli",
+        "pulumi.arch": "arm64",
+        "pulumi.env.PULUMI_CONFIG_PASSPHRASE": "set",
+        "pulumi.flag.skip-preview": "true",
+        "pulumi.flag.stack": "set",
+        "pulumi.os": "darwin",
+        "pulumi.version": "v3.134.1",
+        "updatePlan": "false"
+    },
+    "config": {
+        "pulumi:tags": {
+            "pulumi:template": "go"
+        }
+    },
+    "version": 0,
+    "result": "failed",
+    "endTime": 1732225006,
+    "resourceChanges": {
+        "same": 4
+    }
+}

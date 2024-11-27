@@ -1,0 +1,23 @@
+{
+    "kind": "update",
+    "startTime": 1732223828,
+    "message": "",
+    "environment": {
+        "exec.kind": "cli",
+        "pulumi.arch": "arm64",
+        "pulumi.os": "darwin",
+        "pulumi.version": "v3.134.1",
+        "updatePlan": "false"
+    },
+    "config": {
+        "pulumi:tags": {
+            "pulumi:template": "go"
+        }
+    },
+    "version": 0,
+    "result": "succeeded",
+    "endTime": 1732223830,
+    "resourceChanges": {
+        "create": 1
+    }
+}
